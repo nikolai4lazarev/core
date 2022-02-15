@@ -8,4 +8,10 @@ public interface TaskService {
 
     List<Task> findAll();
 
+    Task findByMessage(String message);
+
+    void save(Task task);
+
+    String hello();
+
 }
