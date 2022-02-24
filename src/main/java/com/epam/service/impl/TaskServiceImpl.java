@@ -4,7 +4,6 @@ import com.epam.domain.Task;
 import com.epam.repository.JpaTaskRepository;
 import com.epam.service.TaskService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import java.util.List;
 public class TaskServiceImpl implements TaskService {
 
     private final JpaTaskRepository repository;
-    @Value("${hello.message}")
     private String helloMessage;
 
     @Override
@@ -33,9 +31,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public String hello() {
-        return null;
+    public Task findById(Long id) {
+        return repository.findById(id).get();
     }
-
 
 }

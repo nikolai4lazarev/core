@@ -12,6 +12,8 @@ public interface TaskService {
 
     void save(Task task);
 
-    String hello();
+    Task findById(Long id);
+
+
 
 }
